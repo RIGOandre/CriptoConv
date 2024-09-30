@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CriptoConv - Mercado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .section-cinza {
+            background-color: #bebebe;
+            padding: 20px;
+            margin: 20px auto;
+            width: calc(100% - 40px);
+            border-radius: 8px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .dropdown-select {
+            width: 300px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .stats h3 {
+            margin-right: 20px;
+        }
+
+        .grafico {
+            height: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: bold;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-light py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="logo">CriptoConv</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="/conversor" class="nav-link">Conversor</a></li>
+                    <li class="nav-item"><a href="/mercado" class="nav-link">Mercado</a></li>
+                    <li class="nav-item"><a href="/carteira" class="nav-link">Carteira</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <section class="section-cinza">
+            <div class="section-header">
+                <div class="d-flex align-items-center">
+                    <img src="/static/img/btc-icon.png" alt="Icone Bitcoin" class="icon me-3">
+                    <select class="form-select dropdown-select" aria-label="Escolha a criptomoeda">
+                        <option selected>Bitcoin (BTC)</option>
+                        <option value="1">Ethereum (ETH)</option>
+                        <option value="2">Ripple (XRP)</option>
+                        <option value="3">Litecoin (LTC)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="stats">
+                <h3>Preço: $60.925,70 - Bitcoin (BTC)</h3>
+                <h3>Volume de Mercado: 60mi</h3>
+                <h3>Fornecimento em Circulação: 100mi</h3>
+            </div>
+
+            <div class="grafico">
+                <h2>GRÁFICO</h2> <!-- Esta área será substituída pelo gráfico real -->
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

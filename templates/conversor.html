@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CriptoConv - Conversor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-light py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="logo" style="color: #1C1C1C;">CriptoConv</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="/conversor" class="nav-link">Conversor</a></li>
+                    <li class="nav-item"><a href="/mercado" class="nav-link">Mercado</a></li>
+                    <li class="nav-item"><a href="/carteira" class="nav-link">Carteira</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+        <h2>Conversor de Criptomoedas</h2>
+        
+        <div class="form-group mb-4">
+            <label for="quantia">Quantia</label>
+            <input type="number" id="quantia" class="form-control" placeholder="Digite a quantia">
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-5">
+                <label id="label-cripto" for="cripto">Criptomoeda</label>
+                <input type="text" id="cripto" class="form-control">
+            </div>
+
+            <div class="col-md-2 text-center d-flex align-items-center justify-content-center">
+                <button id="trocar" class="btn btn-secondary">Trocar</button>
+            </div>
+
+            <div class="col-md-5">
+                <label id="label-fiduciaria" for="fiduciaria">Moeda Fiduciária</label>
+                <input type="text" id="fiduciaria" class="form-control">
+            </div>
+        </div>
+
+        <button id="converter" class="btn btn-primary">Converter</button>
+
+        <h3 id="resultado" class="mt-4"></h3>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        document.getElementById('trocar').addEventListener('click', function() {
+            let cripto = document.getElementById('cripto').value;
+            let fiduciaria = document.getElementById('fiduciaria').value;
+
+            document.getElementById('cripto').value = fiduciaria;
+            document.getElementById('fiduciaria').value = cripto;
+
+            let labelCripto = document.getElementById('label-cripto').innerText;
+            let labelFiduciaria = document.getElementById('label-fiduciaria').innerText;
+            document.getElementById('label-cripto').innerText = labelFiduciaria;
+            document.getElementById('label-fiduciaria').innerText = labelCripto;
+        });
+
+        document.getElementById('converter').addEventListener('click', function() {
+            let quantia = document.getElementById('quantia').value;
+            let cripto = document.getElementById('cripto').value;
+            let fiduciaria = document.getElementById('fiduciaria').value;
+            
+            let resultado = quantia + ' ' + cripto + ' equivale a ' + (quantia * 105) + ' ' + fiduciaria;
+            document.getElementById('resultado').innerText = resultado;
+        });
+    </script>
+</body>
+</html>
